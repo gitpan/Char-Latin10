@@ -219,5 +219,5 @@ See also code table:
 
 SEE ALSO
 
-perl, Sjis.pm
+perl, Latin10.pm, Elatin10.pm, jacode.pl
 
