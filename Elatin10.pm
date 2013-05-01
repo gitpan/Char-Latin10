@@ -28,7 +28,7 @@ BEGIN {
 # (and so on)
 
 BEGIN { eval q{ use vars qw($VERSION) } }
-$VERSION = sprintf '%d.%02d', q$Revision: 0.87 $ =~ /(\d+)/xmsg;
+$VERSION = sprintf '%d.%02d', q$Revision: 0.88 $ =~ /(\d+)/xmsg;
 
 BEGIN {
     my $PERL5LIB = __FILE__;
@@ -422,7 +422,6 @@ sub Latin10::rindex($$;$);
 # Character class
 #
 BEGIN { eval q{ use vars qw(
-    $anchor
     $dot
     $dot_s
     $eD
@@ -451,7 +450,7 @@ BEGIN { eval q{ use vars qw(
     $eb
     $eB
 ) } }
-${Elatin10::anchor}      = qr{\G(?:[\x00-\xFF])*?};
+
 ${Elatin10::dot}         = qr{(?:[^\x0A])};
 ${Elatin10::dot_s}       = qr{(?:[\x00-\xFF])};
 ${Elatin10::eD}          = qr{(?:[^0-9])};
@@ -487,6 +486,35 @@ ${Elatin10::not_word}    = qr{(?:[^\x30-\x39\x41-\x5A\x5F\x61-\x7A])};
 ${Elatin10::not_xdigit}  = qr{(?:[^\x30-\x39\x41-\x46\x61-\x66])};
 ${Elatin10::eb}          = qr{(?:\A(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[0-9A-Z_a-z])|(?<=[0-9A-Z_a-z])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]|\z))};
 ${Elatin10::eB}          = qr{(?:(?<=[0-9A-Z_a-z])(?=[0-9A-Z_a-z])|(?<=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF])(?=[\x00-\x2F\x40\x5B-\x5E\x60\x7B-\xFF]))};
+
+# avoid: Name "Elatin10::foo" used only once: possible typo at here.
+${Elatin10::dot}         = ${Elatin10::dot};
+${Elatin10::dot_s}       = ${Elatin10::dot_s};
+${Elatin10::eD}          = ${Elatin10::eD};
+${Elatin10::eS}          = ${Elatin10::eS};
+${Elatin10::eW}          = ${Elatin10::eW};
+${Elatin10::eH}          = ${Elatin10::eH};
+${Elatin10::eV}          = ${Elatin10::eV};
+${Elatin10::eR}          = ${Elatin10::eR};
+${Elatin10::eN}          = ${Elatin10::eN};
+${Elatin10::not_alnum}   = ${Elatin10::not_alnum};
+${Elatin10::not_alpha}   = ${Elatin10::not_alpha};
+${Elatin10::not_ascii}   = ${Elatin10::not_ascii};
+${Elatin10::not_blank}   = ${Elatin10::not_blank};
+${Elatin10::not_cntrl}   = ${Elatin10::not_cntrl};
+${Elatin10::not_digit}   = ${Elatin10::not_digit};
+${Elatin10::not_graph}   = ${Elatin10::not_graph};
+${Elatin10::not_lower}   = ${Elatin10::not_lower};
+${Elatin10::not_lower_i} = ${Elatin10::not_lower_i};
+${Elatin10::not_print}   = ${Elatin10::not_print};
+${Elatin10::not_punct}   = ${Elatin10::not_punct};
+${Elatin10::not_space}   = ${Elatin10::not_space};
+${Elatin10::not_upper}   = ${Elatin10::not_upper};
+${Elatin10::not_upper_i} = ${Elatin10::not_upper_i};
+${Elatin10::not_word}    = ${Elatin10::not_word};
+${Elatin10::not_xdigit}  = ${Elatin10::not_xdigit};
+${Elatin10::eb}          = ${Elatin10::eb};
+${Elatin10::eB}          = ${Elatin10::eB};
 
 #
 # Latin-10 split
