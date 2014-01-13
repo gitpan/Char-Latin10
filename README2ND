@@ -1,14 +1,12 @@
 NAME
 
-       Char::Latin10 - Source code filter for Latin-10 script (Imitation JPerl)
+       Latin10 - Source code filter for Latin-10 script (Imitation JPerl)
 
 SYNOPSIS
 
     In your script:
 
-      use Char::Latin10; # CPAN formal style
-         or
-      use Latin10; # casual style
+      use Latin10;
 
     At command prompt:
 
